@@ -1,6 +1,6 @@
 {
     "name": "async-job-queue",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "description": "A node.js module implementing an asynchronous job queue.",
     "main": "./lib/index.js",
     "scripts": {
@@ -18,8 +18,8 @@
     },
     "licenses": [
         {
-            "type": "Apache-2.0",
-            "url": "https://raw.github.com/gaaiatinc/async-job-queue/master/LICENSE"
+            "type": "Apache License, Version 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
         }
     ],
     "bugs": {
@@ -54,3 +54,6 @@
         "uuid": "^2.0.1"
     }
 }
+
+
+

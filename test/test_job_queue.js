@@ -3,7 +3,8 @@
  */
 'use strict';
 
-var assert = require('assert');
+var assert = require('assert'),
+    Q = require("q");
 
 
 'use strict';
@@ -29,6 +30,9 @@ var job_queue_2 = require("../lib/index")({
 
 
 function dummyExecutor(aJob) {
+    return Q.Promise(function (resolve, reject) {
+        resolve();
+    });
     //console.log(">>>> dummy executor", aJob.toString());
 }
 /**
@@ -122,7 +126,7 @@ describe('job-queue', function () {
                 numJobsExecuted--;
             });
 
-            for (var i = 0; i < 100000; i++) {
+            for (var i = 0; i < 10000; i++) {
                 ++numJobsCreated;
                 job_queue_2.pushJob("q_2_" + new Date().toString()).then(function () {
                     numJobsExecuted--;
@@ -142,7 +146,7 @@ describe('job-queue', function () {
                 console.log("number of jobs created:", numJobsCreated);
                 console.log("number of jobs executed:", numJobsExecuted);
                 done();
-            }, 15000);
+            }, 1000);
 
 
         });
